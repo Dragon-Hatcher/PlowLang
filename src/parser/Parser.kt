@@ -13,7 +13,7 @@ class Parser(val fileLocations: Set<ProjectFileLocation>) {
 
     private var tokens: List<Token> = ArrayList()
 
-    private val modifierKeywords = listOf("public", "private", "protected").map { Token(it, TokenType.KEYWORD) }
+    private val modifierKeywords = listOf("public", "private", "protected", "static").map { Token(it, TokenType.KEYWORD) }
 
     private var tokenNum = 0
 

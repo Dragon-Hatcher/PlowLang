@@ -4,7 +4,7 @@ class Keywords {
     companion object {
         val keywords = listOf("var", "if", "else", "while", "break", "true", "false", "nil",
             "main", "func", "return", "void", "raw", "class", "struct", "protocol",
-            "public", "private", "protected", "import", "as")
+            "public", "private", "protected", "static", "import", "as")
     }
 }
 
