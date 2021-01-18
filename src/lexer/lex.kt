@@ -7,7 +7,9 @@ import manager.FileLocation
 import manager.ProjectFile
 import manager.TextLocation
 
-
+/**
+ * Constructs an object from which the list of [LexToken]s can be extracted.
+ */
 class Lexer(codeIn: String, private val fileLocation: FileLocation) {
 
     companion object {
@@ -16,10 +18,8 @@ class Lexer(codeIn: String, private val fileLocation: FileLocation) {
         val matchNumberStart = "[0-9]".toRegex()
         val matchNumbers = "[0-9_]".toRegex()
         val matchUntilNewLine = "[^\\r\\n]".toRegex()
-        val matchNewLine = "[\\r\\n]".toRegex()
         val matchWhiteSpace = "[\\s]".toRegex()
         val matchOperator = "[/\\-+=!*<%>&|^?~_]".toRegex()
-        val matchUntilCloseParens = "[^}]".toRegex()
         const val commentStart = "//"
         const val multiCommentStart = "/*"
         const val multiCommentEnd = "*/"
@@ -33,6 +33,10 @@ class Lexer(codeIn: String, private val fileLocation: FileLocation) {
     private var line = 0
     private var col = 0
 
+    /**
+     * Returns the list of [LexToken]s for the code the class was constructed with. All the tokens have a [CodeLocation] based
+     * on the [FileLocation] the class was constructed with.
+     */
     fun getTokens(): List<LexToken> {
         if (tokens.size != 0) return tokens
 

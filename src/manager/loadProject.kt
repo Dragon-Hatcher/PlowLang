@@ -6,6 +6,9 @@ import manager.exceptions.MissingSrcFolderError
 import manager.exceptions.ProjectRootMustBeDirectoryError
 import java.io.File
 
+/**
+ * Finds all the .plow files in a project given the [rootFile] of the project. Returns a [ProjectFiles] object.
+ */
 fun loadProjectFiles(rootFile: File): ProjectFiles {
     if(!rootFile.isDirectory) ProjectRootMustBeDirectoryError(rootFile).throwSelf()
 
