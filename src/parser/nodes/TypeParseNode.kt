@@ -11,8 +11,8 @@ import manager.*
  * the true path this path must be contacted with any imports in the file.
  */
 class TypeParseNode(
-    val name: String,
+    val name: IdentifierParseNode,
     val genericOver: List<TypeParseNode>, //non generic types have no generic parameters (ie. Int == Int<>)
     val projectLocation: ProjectLocation,
-    codeLocation: CodeLocation //this
-): BaseParseNode(codeLocation)
+    codeLocation: CodeLocation
+): BaseParseNode(codeLocation), FunctionReferenceParseNode
