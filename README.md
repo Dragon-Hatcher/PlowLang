@@ -1,3 +1,5 @@
+Plow has been relocated here https://github.com/PlowLang/Plow.
+
 # Plow #
 Plow is a WIP programming language targeting the ti84+ce calculator. Any suggestions about anything are welcome and encouraged.
 
